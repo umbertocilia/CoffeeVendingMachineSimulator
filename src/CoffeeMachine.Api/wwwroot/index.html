@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CoffeeMachine Digital Twin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">CM</div>
+                <div>
+                    <h1>Digital Twin</h1>
+                    <p>Office Hot Drinks</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <button class="nav-item active" data-section="dashboard">Dashboard</button>
+                <button class="nav-item" data-section="purchase">Acquisto bevande</button>
+                <button class="nav-item" data-section="machine">Stato macchina</button>
+                <button class="nav-item" data-section="ingredients">Ingredienti / serbatoi</button>
+                <button class="nav-item" data-section="recipes">Ricette</button>
+                <button class="nav-item" data-section="products">Prodotti</button>
+                <button class="nav-item" data-section="orders">Ordini</button>
+                <button class="nav-item" data-section="diagnostics">Diagnostica</button>
+                <button class="nav-item" data-section="maintenance">Manutenzione</button>
+                <button class="nav-item" data-section="config">Configurazione simulazione</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="connection-pill" id="connection-status">Realtime: connecting</div>
+            </div>
+        </aside>
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <div class="workspace">
+            <header class="topbar">
+                <div class="topbar-title">
+                    <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-label="Apri menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div>
+                        <p class="eyebrow">Coffee machine twin</p>
+                        <h2 id="machine-name">office-coffee-machine</h2>
+                    </div>
+                </div>
+                <div class="topbar-status">
+                    <div class="status-chip" id="machine-status-chip">Off</div>
+                    <div class="metric-pill">
+                        <span>Credito</span>
+                        <strong id="header-credit">€0.00</strong>
+                    </div>
+                    <div class="metric-pill">
+                        <span>Temp</span>
+                        <strong id="header-temperature">0°C</strong>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content">
+                <section class="view active" id="view-dashboard"></section>
+                <section class="view" id="view-purchase"></section>
+                <section class="view" id="view-machine"></section>
+                <section class="view" id="view-ingredients"></section>
+                <section class="view" id="view-recipes"></section>
+                <section class="view" id="view-products"></section>
+                <section class="view" id="view-orders"></section>
+                <section class="view" id="view-diagnostics"></section>
+                <section class="view" id="view-maintenance"></section>
+                <section class="view" id="view-config"></section>
+            </main>
+        </div>
+    </div>
+
+    <div class="toast-stack" id="toast-stack"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+</html>
