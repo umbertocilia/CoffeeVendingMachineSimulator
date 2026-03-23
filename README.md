@@ -26,6 +26,10 @@ Il progetto e pensato come base solida per scenari di:
 - demo architetturale layered
 - futura evoluzione verso persistenza SQL e multi-machine
 
+## Screenshot
+
+<img src="docs/images/GUI.png" alt="CoffeeMachine GUI screenshot" width="1100" />
+
 ## Feature principali
 
 - Simulazione del ciclo macchina: heating, dispensing, mixing, completamento ordine.
@@ -145,6 +149,8 @@ Il progetto e organizzato in layer:
 ```text
 CoffeeMachine.sln
 README.md
+docs/
+  images/
 src/
   CoffeeMachine.Api/
   CoffeeMachine.Application/
